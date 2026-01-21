@@ -47,7 +47,7 @@ export const NewsFilter = ({
           </TextField.Slot>
         </TextField.Root>
 
-        <Flex gap="2" wrap="wrap">
+        <Flex gap="2" wrap="wrap" className="capitalize">
           {categories.map(category => (
             <Button
               key={category}

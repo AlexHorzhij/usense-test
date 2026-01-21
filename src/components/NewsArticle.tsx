@@ -10,7 +10,12 @@ export const NewsArticle = ({ article }: { article: any }) => {
         flexDirection: 'column',
       }}
     >
-      <a href={article.link} target="_blank" rel="noopener noreferrer">
+      <a
+        href={article.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col h-full"
+      >
         <Inset clip="padding-box" side="top" pb="current">
           <img
             src={article.image_url || '/placehold.jpg'}
@@ -40,6 +45,7 @@ export const NewsArticle = ({ article }: { article: any }) => {
             as="p"
             size="2"
             color="gray"
+            className="h-full"
             style={{
               display: '-webkit-box',
               WebkitLineClamp: 3,
@@ -56,11 +62,11 @@ export const NewsArticle = ({ article }: { article: any }) => {
             align="center"
             style={{ borderTop: '1px solid var(--gray-5)' }}
           >
-            <Text size="1" color="gray">
-              By {article.author || 'Unknown'}
+            <Text size="1" color="gray" className="capitalize">
+              By {article.creator || 'Unknown'}
             </Text>
             <Text size="1" color="gray">
-              {new Date(article.publishedAt).toLocaleDateString()}
+              {new Date(article.pubDate).toLocaleDateString()}
             </Text>
           </Flex>
         </Flex>
