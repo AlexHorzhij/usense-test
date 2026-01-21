@@ -4,12 +4,22 @@ import { Button, Card, Flex, TextField } from '@radix-ui/themes';
 const categories = [
   'All',
   'business',
+  'crime',
+  'domestic',
+  'education',
   'entertainment',
-  'general',
+  'environment',
+  'food',
   'health',
+  'lifestyle',
+  'politics',
   'science',
   'sports',
   'technology',
+  'top',
+  'tourism',
+  'world',
+  'other',
 ];
 
 export const NewsFilter = ({

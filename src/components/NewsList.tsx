@@ -35,12 +35,9 @@ export const NewsList = ({
         width="auto"
         align="center"
       >
-        {data?.articles && data?.articles.length > 0 ? (
-          data?.articles.map(item => (
-            <NewsArticle
-              article={item}
-              key={item.url ? item.url : item.publishedAt}
-            />
+        {data?.results && data?.results.length > 0 ? (
+          data?.results.map(item => (
+            <NewsArticle article={item} key={item.article_id} />
           ))
         ) : (
           <Box py="9" style={{ gridColumn: '1 / -1' }}>
