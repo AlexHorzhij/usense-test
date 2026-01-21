@@ -7,7 +7,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <header>
           <Heading
             size="9"
-            align="left"
+            align="center"
             weight="bold"
             style={{
               background: 'linear-gradient(to right, #818cf8, #c084fc)',
@@ -16,7 +16,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
               letterSpacing: '-0.025em',
             }}
           >
-            Global news reporter
+            GLOBAL NEWS REPORTER
           </Heading>
         </header>
         {children}
