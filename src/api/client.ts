@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// const BASE_URL = 'https://newsapi.org/v2/top-headlines';
 const BASE_URL = 'https://newsdata.io/api/1/latest';
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 

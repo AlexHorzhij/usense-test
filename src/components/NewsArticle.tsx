@@ -1,8 +1,6 @@
-import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { Badge, Box, Card, Flex, Heading, Inset, Text } from '@radix-ui/themes';
 
 export const NewsArticle = ({ article }: { article: any }) => {
-  console.log(article);
   return (
     <Card
       size="2"
@@ -13,48 +11,26 @@ export const NewsArticle = ({ article }: { article: any }) => {
       }}
     >
       <a href={article.link} target="_blank" rel="noopener noreferrer">
-        {article.image_url && (
-          <Inset clip="padding-box" side="top" pb="current">
-            {article.image_url ? (
-              <img
-                src={article.image_url}
-                alt={article.title}
-                onError={() => {
-                  article.image_url = '../../public/placehold.jpg';
-                }}
-                style={{
-                  display: 'block',
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: 200,
-                  backgroundColor: 'var(--gray-5)',
-                }}
-              />
-            ) : (
-              <img
-                src={'/placehold.jpg'}
-                alt={article.title}
-                style={{
-                  display: 'block',
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: 200,
-                  backgroundColor: 'var(--gray-5)',
-                }}
-              />
-            )}
-          </Inset>
-        )}
+        <Inset clip="padding-box" side="top" pb="current">
+          <img
+            src={article.image_url || '/placehold.jpg'}
+            alt={article.title}
+            onError={e => {
+              (e.target as HTMLImageElement).src = '/placehold.jpg';
+            }}
+            style={{
+              display: 'block',
+              objectFit: 'cover',
+              width: '100%',
+              height: 200,
+              backgroundColor: 'var(--gray-5)',
+            }}
+          />
+        </Inset>
         <Flex direction="column" gap="3" p="3" flexGrow="1">
           <Box>
             <Badge color="indigo" variant="soft" size="1">
-              {/* <a
-              href={article.source_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            > */}
               {article.source_id}
-              {/* </a> */}
             </Badge>
           </Box>
           <Heading as="h3" size="4" trim="start">
